@@ -1,11 +1,12 @@
 import os
 
 from utils.extractor import Extractor
+from utils.report import generate_reports
 
 
 CONSOLES_FILE_PATH = os.getenv("CONSOLES_FILE_PATH", "data/consoles.csv")
 RESULT_FILE_PATH = os.getenv("RESULT_FILE_PATH", "data/result.csv")
-OUTPUT_FOLDER = os.getenv("CONSOLES_FILE_PATH", "results")
+OUTPUT_FOLDER = os.getenv("OUTPUT_FOLDER", "data/")
 
 
 def main():
@@ -15,12 +16,9 @@ def main():
     )
     consoles_df, result_df = extractor.get_data()
 
-    data = result_df.merge(consoles_df, how='inner', on='console')
+    data = result_df.merge(consoles_df, how="inner", on="console")
 
-    data.info()
-
-    
-
+    generate_reports(data, OUTPUT_FOLDER)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  etl:
+    image: 
+    # build:
+    #   dockerfile: $PWD/Dockerfile
+    #   context: $PWD/
+    container_name: etl_de_challenge
+    environment:
+      - CONSOLES_FILE_PATH=/app/data/consoles.csv
+      - RESULT_FILE_PATH=/app/data/result.csv
+      - OUTPUT_FOLDER=/app/data/output
+    volumes:
+      - $PWD/data:/app/data

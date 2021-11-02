@@ -1,0 +1,1 @@
+I chose draw.io because it is a very flexible tool with a range of features to use (BPMN, UML, etc). As well it is web based and allows you to work from multiple sources (PC, Googledrive, Github, etc).
