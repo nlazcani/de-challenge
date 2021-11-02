@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 
 def generate_reports(data, folder):
@@ -6,6 +7,8 @@ def generate_reports(data, folder):
     Generates reports for the data.
     :param data: DataFrame
     """
+
+    Path(folder).mkdir(parents=True, exist_ok=True)
 
     # Generate report The top 10 best games for each console/company.
     top_10_games = data.groupby(["console", "company"], as_index=False).apply(
