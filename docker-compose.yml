@@ -11,4 +11,4 @@ services:
       - RESULT_FILE_PATH=/app/data/result.csv
       - OUTPUT_FOLDER=/app/data/output
     volumes:
-      - $PWD/data:/app/data
+      - ./data:/app/data
